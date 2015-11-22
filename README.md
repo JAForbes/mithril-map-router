@@ -52,5 +52,11 @@ mapRoutes(authRedirect, container, '/' ,{
 
 Arguments: `( visitor: function, container: HTMLElement, initialRoute: string, routes: object )`
 
-Calls the `visitor` function every time mithril triggers a route change.  Everything else works just like [`m.route`](https://lhorie.github.io/mithril/mithril.route.html)
+Calls the `visitor` function every time mithril triggers a route change.  
+Your `controller` will receive the result of the visitor function as its first argument.
+
+Works with parameterized components just fine.
+
+The other arguments work just like [`m.route`](https://lhorie.github.io/mithril/mithril.route.html)
+because this function just proxies to it.
 
