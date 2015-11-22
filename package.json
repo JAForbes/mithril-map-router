@@ -1,0 +1,19 @@
+{
+  "name": "mithril-map-router",
+  "version": "0.0.0",
+  "description": "Map route changes like you map arrays!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"pfffft\""
+  },
+  "author": "james.a.forbes@gmail.com <=> (http://james-forbes.com)",
+  "license": "ISC",
+  "keywords": [
+    "mithril",
+    "router",
+    "functional"
+  ],
+  "dependencies": {
+    "mithril": "^0.2.0"
+  }
+}
