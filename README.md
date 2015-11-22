@@ -9,7 +9,7 @@ Map over route changes like you map over arrays!
 Now let's give very route access to a `data` object for shared context.
 Easy with ramda's `R.always`.
 
-```
+```js
 var R = require('ramda');
 var m = require('mithril')
 var mapRoutes = require('mithril-map-router')
@@ -32,7 +32,7 @@ mapRoutes(R.always(data), container, '/' ,{
 
 Or you could do something more advanced like check if the user is logged in on route change.
 
-```
+```js
 var authRedirect = function(routeName){
   var token = localStorage.getItem('auth_token')
   if(!token){
