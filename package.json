@@ -15,5 +15,14 @@
   ],
   "dependencies": {
     "mithril": "^0.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAForbes/mithril-map-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JAForbes/mithril-map-router/issues"
+  },
+  "homepage": "https://github.com/JAForbes/mithril-map-router#readme"
 }
