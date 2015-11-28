@@ -6,7 +6,7 @@ Map over route changes like you map over arrays!
 
 `npm install mithril-map-router`
 
-Now let's give very route access to a `data` object for shared context.
+Now let's give every route access to a `data` object for shared context.
 Easy with ramda's `R.always`.
 
 ```js
