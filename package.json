@@ -13,9 +13,6 @@
     "router",
     "functional"
   ],
-  "dependencies": {
-    "mithril": "^0.2.0"
-  },
   "devDependencies": {},
   "repository": {
     "type": "git",

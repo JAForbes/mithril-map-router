@@ -12,7 +12,7 @@ Easy with ramda's `R.always`.
 ```js
 var R = require('ramda');
 var m = require('mithril')
-var mapRoutes = require('mithril-map-router')
+var mapRoutes = require('mithril-map-router')(m)
 
 /*
   Automatically parameterize every component
@@ -47,6 +47,11 @@ mapRoutes(authRedirect, container, '/' ,{
 ```
 
 ## Documentation
+
+##### Initialization
+
+You must pass in your mithril `m` object to initialize the router module.
+You'll then be given access to the `mapRoutes` function.
 
 ##### mapRoutes
 
