@@ -1,6 +1,6 @@
 {
   "name": "mithril-map-router",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Map route changes like you map arrays!",
   "main": "index.js",
   "scripts": {
