@@ -1,28 +1,51 @@
+function noop(){}
+
+function map(f,o){
+	return Object.keys(o)
+		.reduce(function(p, k){
+			p[k] = f(o[k])
+			return p
+		}, {})
+}
+
 module.exports = function(m){
 	var mapRoutes = function(visitor, container, initial, routes){
-	
-		var noop = function(){}
-		var wrapper = function(RealController){
-			return function WrapController(){
-				return new RealController(visitor(m.route()))
-			}
-		}
-		
-		visitor = visitor || noop
-		
-		Object.keys(routes)
-			.forEach(function(url){
-				var route = routes[url]
-				var wrappedComponent = { 
-					controller: wrapper(route.controller || noop), 
-					view: route.view 
+
+		return m.route(
+			container
+			, initial
+			, map(function(route){
+
+				var RealController = route.controller || noop
+
+				var options = {
+					onunload: noop
 				}
-				routes[url] = wrappedComponent  
-			})
-			
-		return m.route(container, initial, routes)
+
+				var controller = function WrapController(){
+
+
+					var instance = new RealController(visitor(m.route(), options))
+
+					var instance_onunload = instance.onunload || noop
+
+					instance.onunload = function(){
+						instance_onunload.apply(this, arguments)
+						options.onunload.apply(this, arguments)
+					}
+
+					return instance
+				}
+
+				return {
+					controller,
+					view: route.view
+				}
+
+			}, routes)
+		)
 	}
-	
+
 	return mapRoutes
 }
 
