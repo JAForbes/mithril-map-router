@@ -1,6 +1,7 @@
 # mithril-map-router
 Map over route changes like you map over arrays!
 
+> WARNING: This library only works with mithril's 0.2.x API.  If you are using 1.0 take a look at the [authentication section of the docs](https://mithril.js.org/route.html#authentication)
 
 #### Getting start
 
